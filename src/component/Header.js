@@ -1,61 +1,43 @@
+import logo from "../img/logo.gif";
 import React from "react";
-import headerImg from "../pd_common_logo.png";
-import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
 
-const Header = (props) => {
-  const useStyles = makeStyles((theme) => ({
-    AppHeader: {
-      height: "60px",
-      position: "absolute",
-      width: "100%",
-      textAlign: "left",
-      background: "#ffffff",
-      boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.15)",
-    },
-    Header: {
-      width: "1000px",
-      margin: "0 auto",
-    },
-    headerImgTitle: {
-      position: "absolute",
-      width: "160px",
-      height: "27px",
-      marginLeft: "95px",
-      top: "17px",
-      fontWeight: "bold",
-      fontSize: "18px",
-      lineHeight: "26px",
-    },
-
-    headerTitle: {
-      position: "absolute",
-      width: "350px",
-      height: "24px",
-      marginLeft: "275px",
-      top: "18px",
-      fontSize: "16px",
-      lineHeight: "23px",
-    },
-    headerImg: {
-      width: "60px",
-      height: "40px",
-      top: "10px",
-      position: "absolute",
-    },
-  }));
-  const classes = useStyles();
+const StyledHeader = styled.header`
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  letter-spacing: -0.01em;
+  color: #333333;
+  .headerTitle {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .headerContents {
+    margin-left: 20px;
+  }
+  img {
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 60px;
+    height: 40px;
+  }
+  div {
+    margin-top: -40px;
+    margin-left: 130px;
+  }
+`;
+const Header = () => {
   return (
-    <header //월급날 통합 로그인
-      className={classes.AppHeader}
-    >
-      <div className={classes.Header}>
-        <img src={headerImg} alt={""} className={classes.headerImg} />
-        <span className={classes.headerImgTitle}>월급날 통합 로그인</span>
-        <span className={classes.headerTitle}>
-          등록된 아이디를 이용하여 자동으로 로그인 합니다.
-        </span>
+    <StyledHeader>
+      <img src={logo} alt="logo" />
+      <div>
+        <span className="headerTitle">월급날</span>
+        <span className="headerContents">연말정산 일괄 처리 게시판</span>
       </div>
-    </header>
+    </StyledHeader>
   );
 };
 export default Header;

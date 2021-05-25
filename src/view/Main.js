@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
-import ".././App.css";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
+import MenuView from "./MenuView";
+import SectionView from "./SectionView";
 import Header from "../component/Header";
-import Login from "../component/Login";
-import FVList from "../component/FVList";
-import SearchList from "../component/SearchList";
+
 const Main = () => {
   return (
-    <div className="App">
+    <div>
       <Header />
-      <section className="section">
-        <Login />
-        <FVList />
-        <SearchList />
-      </section>
+      <div style={{ margin: "auto", width: "1920px" }}>
+        <MenuView />
+        <SectionView />
+      </div>
     </div>
   );
 };
+
 export default Main;
